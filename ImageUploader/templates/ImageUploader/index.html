@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<script>var currentDatasetId = {{ datasetId }}</script>
+<script type="text/javascript">DJANGO_STATIC_URL = '{{ STATIC_URL }}';</script>
+<script src="{% static 'ImageUploader/js/UploadEntry.js' %}"></script>
+<script src="{% static 'ImageUploader/js/UploadList.js' %}"></script>
+<script src="{% static 'ImageUploader/js/uploader.js' %}"></script>
+<body>
+<div class="page-header">
+	<h1>Upload images to selected dataset</h1>
+</div>
+<div>
+    <table style="font-size:12px;">
+		<col width="100">
+		<col width="50">
+		<col width="200">
+		<tr>
+			<td><strong>Selected dataset:</strong></td>
+			<td></td>
+			<td>{{ datasetName }} ({{ datasetId }})</td>
+		</tr>
+	</table>
+	<hr>
+	<div class="button-group" style="padding: 8px;">
+		<input id="fileDialog" type="file" style="display: none;" onchange="FileChoosenFunc(this)" multiple/>
+		<button id="chooseButton" type="button" class="button" onclick="ChooseImagesFunc()" >
+			<img src="{% static 'ImageUploader/images/Image_16x.png' %}" />
+			<span>Choose Images</span>
+		</button>
+	</div>
+	<hr>
+	<table id="fileTable" style="font-size:12px; border-collapse: collapse; text-align: left;">
+		<col width="300">
+		<col width="50">
+		<col width="100">
+		<col width="50">
+		<col width="50">
+		<col width="300">
+		<tr>
+			<th style="padding: 8px;"><strong>Name</strong></th>
+			<th/>
+			<th><strong>Size</strong></th> 
+			<th/>
+			<th><strong></strong></th> 
+			<th><strong>Status</strong></th> 
+		</tr>
+	</table>
+	<hr>
+	<div class="button-group" style="padding: 8px;">
+    	<button id="clearButton" type="button" class="button" onclick="ClearImagesFunc()" >
+			<img src="{% static 'ImageUploader/images/StatusOffline_16x.png' %}" />
+			<span>Clear List</span>
+		</button>
+		<button id="uploadButton" type="button" class="button" onclick="UploadImagesFunc()">
+			<img src="{% static 'ImageUploader/images/UploadDatabase_16x.png' %}"/>
+			<span>Upload Images</span>
+		</button>
+	</div>
+</div>
+</body>
+</html>
+
