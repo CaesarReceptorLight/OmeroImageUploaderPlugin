@@ -1,5 +1,5 @@
-# WebImageUploaderPlugin
-Web plugin for uploading images from the OMERO web client.
+# OMERO ImageUploader plugin
+A web plugin for uploading images from the OMERO web client.
 
 **Requirements**
 
